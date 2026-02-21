@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- decorative scene (sun/cloud/rain/snow) -->
+    <div class="scene" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="clouds"></div>
+      <div class="precip"></div>
+    </div>
+
+    <main class="app">
+      <header class="app__header">
+        <h1 class="title">Weather</h1>
+        <p class="subtitle">Pick a city and get live conditions.</p>
+      </header>
+
+      <section class="controls" aria-label="Weather controls">
+        <label class="controls__label" for="city-select">Weather for</label>
+
+        <select id="city-select" class="controls__select">
+          <option value=""></option>
+          <option value="new york">New York</option>
+          <option value="los angeles">Los Angeles</option>
+          <option value="chicago">Chicago</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="london">London</option>
+        </select>
+
+        <button id="get-weather-btn" class="controls__btn" type="button">
+          Get Weather
+        </button>
+      </section>
+
+      <section id="weather-panel" class="panel" hidden>
+        <div class="panel__top">
+          <div class="panel__where">
+            <div class="label">Location</div>
+            <div id="location" class="value value--xl"></div>
+          </div>
+
+          <div class="panel__icon">
+            <img id="weather-icon" alt="Weather icon" />
+            <div id="weather-main" class="chip"></div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="metric">
+            <div class="label">Temperature</div>
+            <div id="main-temperature" class="value" data-unit=" °C"></div>
+          </div>
+
+          <div class="metric">
+            <div class="label">Feels like</div>
+            <div id="feels-like" class="value" data-unit=" °C"></div>
+          </div>
+
+          <div class="metric">
+            <div class="label">Humidity</div>
+            <div id="humidity" class="value" data-unit=" %"></div>
+          </div>
+
+          <div class="metric">
+            <div class="label">Wind</div>
+            <div id="wind" class="value" data-unit=" m/s"></div>
+          </div>
+
+          <div class="metric">
+            <div class="label">Wind gust</div>
+            <div id="wind-gust" class="value" data-unit=" m/s"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footnote">
+        <span class="dot"></span>
+        Data provided by freeCodeCamp weather proxy
+      </footer>
+    </main>
+  </body>
+</html>
